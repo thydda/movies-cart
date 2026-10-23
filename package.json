@@ -1,0 +1,46 @@
+{
+  "name": "@thydda/movies-cart",
+  "version": "0.1.0",
+  "description": "Shared movie model and NgRx cart configuration for shell and movie remotes.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "check": "npm test",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run check"
+  },
+  "dependencies": {
+    "@thydda/cart-state": "0.1.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "^22.1.0",
+    "@ngrx/store": "^22.0.1",
+    "rxjs": "^7.8.0"
+  },
+  "devDependencies": {
+    "@angular/compiler": "22.2.3",
+    "@angular/core": "22.2.3",
+    "@ngrx/store": "^22.0.1",
+    "rxjs": "^7.8.0",
+    "typescript": "~6.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thydda/movies-cart.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
