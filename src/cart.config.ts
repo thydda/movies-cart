@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import { createCartActions, createCartReducer, createCartSelectors } from '@thydda/cart-state';
-import type { Movie } from './movie.model.js';
+import type { Movie } from '@thydda/movies-contracts';
 
 export const cartFeatureKey = 'cart';
 const getId = (movie: Movie): number => movie.id;

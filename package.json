@@ -1,6 +1,6 @@
 {
   "name": "@thydda/movies-cart",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared movie model and NgRx cart configuration for shell and movie remotes.",
   "type": "module",
   "main": "./dist/index.js",
@@ -15,14 +15,15 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "node --input-type=module -e \"import { rmSync } from 'node:fs'; rmSync('dist', { recursive: true, force: true });\" && tsc -p tsconfig.json",
     "test": "npm run build && node --test tests/*.test.mjs",
     "check": "npm test",
     "prepack": "npm run build",
     "prepublishOnly": "npm run check"
   },
   "dependencies": {
-    "@thydda/cart-state": "0.1.0"
+    "@thydda/cart-state": "0.1.0",
+    "@thydda/movies-contracts": "0.1.0"
   },
   "peerDependencies": {
     "@angular/core": "^22.1.0",
